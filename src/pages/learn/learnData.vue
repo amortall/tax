@@ -32,7 +32,9 @@
 
 <script setup>
 import * as echarts from "echarts";
-import {onMounted} from "vue";
+import {onMounted, ref} from "vue";
+
+const activeIndex = ref('1')
 let echart = echarts;
 onMounted(() => {
   initChart();
@@ -94,6 +96,7 @@ function initChart() {
   display: flex;
   justify-content: flex-end;
 }
+
 .personCard{
   width: 30%;
 }
