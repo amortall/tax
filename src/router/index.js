@@ -10,9 +10,9 @@ let routes= [
 
   },
   {
-    path:'/homeIndex',
+    path:'/home',
     name:'home',
-    component:() => import('@/views/homeIndex.vue')
+    component:() => import('@/views/home.vue')
   },
   {
     path:'/learnData',
@@ -23,6 +23,11 @@ let routes= [
     path: '/myClass',
     name:'myClass',
     component:()=>import('@/views/learn/myClass.vue')
+  },
+  {
+    path: '/community',
+    name:'community',
+    component:()=>import('@/views/community.vue')
   }
   // {
   //     // 配置404页面

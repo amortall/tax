@@ -1,59 +1,28 @@
 <template>
-  <el-container>
-    <el-header class="head">
-      <el-menu
-          :default-active="activeIndex"
-          class="navigation"
-          mode="horizontal"
-          active-text-color="black"
-          @select="handleSelect"
-      >
-        <!--        <el-menu-item index="/homeIndex">返回</el-menu-item>-->
-        <div class="avatar">
-          <el-menu-item style="padding: 10px 10px 10px 10px" >
-            <h1>我的课程</h1>
-          </el-menu-item>
-
-<!--          <el-menu-item>-->
-<!--            <div>-->
-<!--              <el-avatar-->
-<!--                  src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"-->
-<!--              />-->
-<!--            </div>-->
-<!--          </el-menu-item>-->
+  <div class="myClass">
+    <el-container class="container">
+      <el-header class="head">
+        <div style="float: left;margin-left:100px">
+          <h2 style="color: white;margin-top: 10px">我的课程</h2>
         </div>
+        <div class="avatar">
+          <el-avatar src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
+        </div>
+      </el-header>
 
-      </el-menu>
-    </el-header>
-
-    <el-main>
-      <div id="course" style="border-radius: 5px">
-        <el-tabs v-model="activeName">
-            <div id="study-course">
-              <div style="margin-top: 30px">
-                <ul style="list-style: none;padding: 0">
-                  <li v-for="(course,index) in courses" :key="index">
-                    <img :src="require(`@/assets/${course.courseCover}`)" style="width: 280px;height: 200px;border-radius: 20px;"
-                         @click="courseId(course.courseId,course.courseName)">
-                    <h3 @click="courseId(course.courseId,course.courseName)">{{ course.courseName }}</h3>
-                    <h5>学校：{{ course.schoolName }}</h5>
-                    <h5>老师：{{ course.userName }}</h5>
-                    <h5>开课时间：{{ course.gmtStart }}-{{ course.gmtEnd }}</h5>
-                  </li>
-                </ul>
-              </div>
-            </div>
-<!--          <el-tab-pane label="我教的课" name="second">-->
-<!--            <professor-course></professor-course>-->
-<!--          </el-tab-pane>-->
-        </el-tabs>
-      </div>
-
-    </el-main>
-
-
-
-  </el-container>
+      <el-main>
+          <div class="courses" style="margin: 30px 30px 0px 30px;border-radius: 30px;background-color: #36A5BB;padding: 0">
+            <ul style="list-style: none;padding: 0;margin-top: 50px">
+              <li v-for="item in 6">
+                <img style="width: 100%; height: 100% ;border-radius: 10px" :src="url"  alt=""/>
+                <h3>课程名称</h3>
+                <h5>学校：老师：</h5>
+              </li>
+            </ul>
+          </div>
+      </el-main>
+    </el-container>
+  </div>
 
 
 
@@ -62,63 +31,39 @@
 
 <script setup>
 
-import { ref, watch} from "vue";
+const url = "src/assets/Images/background2.jpeg"
 
-const activeIndex = ref('1')
-
-let input1;
-let courses = ["云计算"]
-
-
-watch(input1, (newValue, oldValue) => {
-  // 监听input输入框，若没东西了，就回复默认状态
-  if (newValue == "") {
-    // 发请求回到初始列表数据状态
-    console.log("搜索框没东西了，回复初始状态");
-  }
-})
-
-const courseId =(courseIndex, courseName) => {
-  console.log(courseIndex, courseName)
-  // eslint-disable-next-line no-unused-vars
-  let courseInfo = {
-    courseName: courseName,
-    courseIndex: courseIndex
-  }
-}
 
 
 </script>
 
 
 <style scoped>
-* {
+.head{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 0;
+  background-color: #3B6075;
+}
+
+*{
   margin: 0;
   padding: 0;
 }
 
-.head {
-  padding: 0;
+.avatar{
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
-.navigation{
-  background-color: #36A5BB;
-  padding: 0;
-}
-
-
-.avatar {
+.courses{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.box-card {
-  width: 480px;
-}
-
-#study-course {
-  padding-bottom: 100px;
+  justify-content: flex-start;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  background: white;
 }
 
 h5 {
@@ -149,5 +94,6 @@ h3:hover {
   cursor: pointer;
   color: cornflowerblue;
 }
+
 
 </style>
