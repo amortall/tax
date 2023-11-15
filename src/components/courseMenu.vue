@@ -17,6 +17,7 @@ const url = "src/assets/Images/background2.jpeg"
       active-text-color="#606266"
       router="router"
       background-color="#36A5BB"
+      style="margin-top: 60px"
   >
     <el-menu-item index="/chapter" >
       <template #title>

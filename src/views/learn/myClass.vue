@@ -61,7 +61,7 @@ const handleToCourse = () =>{
 }
 
 h5 {
-  margin: 0px;
+  margin: 0;
   padding: 5px;
   font-size: 13px;
   color: #a8a8b3;

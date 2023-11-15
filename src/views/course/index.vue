@@ -7,12 +7,10 @@ import MyCourseHeader from "@/components/myCourseHeader.vue";
 </script>
 
 <template>
-  <el-container>
-    <el-header>
-      <my-course-header/>
-    </el-header>
+  <el-container class="container">
+    <my-course-header/>
 
-    <el-container>
+    <el-container class="main">
       <el-aside>
         <course-menu/>
       </el-aside>
@@ -24,8 +22,13 @@ import MyCourseHeader from "@/components/myCourseHeader.vue";
 </template>
 
 <style scoped>
-el-container{
+.container{
   display: flex;
   flex-flow: column;
 }
+
+.main{
+  display: flex;
+}
+
 </style>
