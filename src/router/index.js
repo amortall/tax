@@ -28,6 +28,34 @@ let routes= [
     path: '/community',
     name:'community',
     component:()=>import('@/views/community.vue')
+  },
+  {
+    path:'/course',
+    name:'course',
+    component:()=>import('@/views/course/index.vue'),
+    // redirect:'/course/chapter',
+    children:[
+      {
+        path: '/chapter',
+        component: () => import('@/views/course/chapter.vue')
+      },
+      {
+        path: '/homework',
+        component: () => import('@/views/course/homework.vue')
+      },
+      {
+        path: '/examination',
+        component: () => import('@/views/course/examination.vue')
+      },
+      {
+        path: '/discuss',
+        component: () => import('@/views/course/discuss.vue')
+      },
+      {
+        path: '/grades',
+        component: () => import('@/views/course/grades.vue')
+      }
+    ]
   }
   // {
   //     // 配置404页面

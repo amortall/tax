@@ -54,7 +54,7 @@ const vertifyCode = ref("");
 //   email
 // }
 const onLoginClick = () => {
-  router.push('/homeIndex')
+  router.push('/home')
   // // 发送数据到后端
   // axios.defaults.baseURL = '/api'
   // axios.get('/send?email='+email.value)

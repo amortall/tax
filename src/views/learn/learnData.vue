@@ -20,7 +20,7 @@
           <div>职业: </div>
           <div>课程:</div>
         </el-card>
-        <el-card class="dataCard">
+        <el-card class="dataCard" style="margin-left: 5%">
           <div class="echarts-box">
             <div id="myEcharts" :style="{ width: '300px', height: '400px' }"></div>
           </div>
